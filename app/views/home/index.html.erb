@@ -1,0 +1,15 @@
+<% if @load_more %>
+  <%= javascript_tag do %>
+    window.fetchMore = true;
+  <% end %>
+<% end %>
+
+<h3>Available Products</h3>
+
+<div class="products_grid row" data="<%= @last_dt %>">
+  <%= render partial: "product", collection: @products, as: :product %>
+</div>
+
+<div id="loading_txt">
+  Loading ...
+</div>
